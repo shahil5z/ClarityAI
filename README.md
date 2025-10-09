@@ -28,7 +28,8 @@ ClarityAI is an AI-powered document intelligence system that processes, understa
 3. [Technology Stack](#technology-stack)
 4. [Project Structure](#project-structure)
 5. [Screenshots](#screenshots)
-6. [License](#license)
+6. [Live Demo](#live-demo)
+7. [License](#license)
 
 ## Features
 
@@ -93,6 +94,14 @@ Here are some screenshots demonstrating ClarityAI in action:
 
 *Displays questions word cloud, answers word cloud, and additional general analytics data for insights.*
 
+## Live Demo
+
+ClarityAI is deployed on Streamlit Cloud for private access.  
+Currently, the app is accessible **only to approved users**.
+
+**Demo URL:** [https://clarity-ai.streamlit.app](https://clarity-ai.streamlit.app)
+
+If you’d like to explore the live demo, please **contact me on [LinkedIn](https://www.linkedin.com/in/shohrab-haque/)** and **drop your email** so I can provide you access.
 
 ## License
 
