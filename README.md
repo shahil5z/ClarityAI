@@ -62,15 +62,18 @@ ClarityAI/
 Here are some screenshots demonstrating ClarityAI in action:
 
 1. **Q&A Interface**  
-![Q&A Screenshot](path/to/qa_screenshot.png)  
+-![image alt](https://github.com/shahil5z/ClarityAI/blob/4b414f91ffe4879c10bbec6e95d6f722af75cf16/Sample/1.png)
+
 *The first question is answered in English, while the second question demonstrates AI responding in German.*
 
-2. **Conversation Analytics**  
-![Analytics Screenshot](path/to/analytics_screenshot.png)  
+3. **Conversation Analytics**  
+-![image alt](https://github.com/shahil5z/ClarityAI/blob/4b414f91ffe4879c10bbec6e95d6f722af75cf16/Sample/2.png)
+
 *Shows detailed analytics of Q&A sessions, including trends, response times, and session summaries.*
 
-3. **Word Clouds & General Analytics**  
-![Word Clouds Screenshot](path/to/wordclouds_screenshot.png)  
+4. **Word Clouds & General Analytics**  
+-![image alt](https://github.com/shahil5z/ClarityAI/blob/4b414f91ffe4879c10bbec6e95d6f722af75cf16/Sample/3.png)
+
 *Displays questions word cloud, answers word cloud, and additional general analytics data for insights.*
 
 
