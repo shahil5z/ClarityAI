@@ -1,5 +1,22 @@
 # ClarityAI
 
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-orange)
+![OpenAI](https://img.shields.io/badge/OpenAI-API-blue)
+![LangChain](https://img.shields.io/badge/LangChain-RAG-purple)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-orange)
+![SentenceTransformers](https://img.shields.io/badge/SentenceTransformers-NLP-blue)
+![DeepTranslator](https://img.shields.io/badge/DeepTranslator-Translation-green)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-blue)
+![Plotly](https://img.shields.io/badge/Plotly-Visualization-orange)
+![WordCloud](https://img.shields.io/badge/WordCloud-Analytics-purple)
+![PyPDF](https://img.shields.io/badge/PyPDF-Document-blue)
+![python-docx](https://img.shields.io/badge/python--docx-Document-green)
+![FPDF2](https://img.shields.io/badge/FPDF2-PDF-orange)
+![FAISS](https://img.shields.io/badge/FAISS-VectorDB-purple)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 ## Project Overview
 
 ClarityAI is an AI-powered document intelligence system that processes, understands, and answers questions about uploaded documents. It combines NLP, RAG (Retrieval-Augmented Generation), and LLM pipelines to provide accurate, context-aware responses. The system supports both English and German languages, making it suitable for global markets, particularly German-speaking regions.
