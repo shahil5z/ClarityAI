@@ -96,12 +96,9 @@ Here are some screenshots demonstrating ClarityAI in action:
 
 ## Live Demo
 
-ClarityAI is deployed on Streamlit Cloud for private access.  
-Currently, the app is accessible **only to approved users**.
+ClarityAI is deployed on Streamlit Cloud for demo preview. 
 
-**Demo URL:** [https://clarity-ai.streamlit.app](https://clarity-ai.streamlit.app)
-
-If you’d like to explore the live demo, please **contact me on [LinkedIn](https://www.linkedin.com/in/shohrab-haque/)** and **drop your email** so I can provide you access.
+**For Demo:** [Click Here](https://clarityai-wasd-demo2.streamlit.app/)
 
 ## License
 
