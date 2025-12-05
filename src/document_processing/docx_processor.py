@@ -1,8 +1,8 @@
 import os
 from typing import List
 from docx import Document as DocxDocument  # Renamed to avoid conflict
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document as LangchainDocument
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document as LangchainDocument
 from src.utils.config import Config
 from src.utils.logger import setup_logger
 
