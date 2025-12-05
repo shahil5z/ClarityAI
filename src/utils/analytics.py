@@ -2,9 +2,15 @@
 
 import os
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 import seaborn as sns
-from wordcloud import WordCloud
+try:
+    from wordcloud import WordCloud
+    WORDCLOUD_AVAILABLE = True
+except ImportError:
+    WORDCLOUD_AVAILABLE = False
 from collections import Counter
 import re
 from typing import List, Dict, Any
@@ -189,18 +195,22 @@ class ConversationAnalytics:
     
     def _generate_wordcloud(self, words: List[str]) -> str:
         """Generate a word cloud and return as base64 string."""
-        if not words:
+        if not words or not WORDCLOUD_AVAILABLE:
             return ""
         
-        wordcloud = WordCloud(width=800, height=400, background_color='white').generate(' '.join(words))
-        
-        # Convert to base64
-        img_buffer = io.BytesIO()
-        wordcloud.to_image().save(img_buffer, format='PNG')
-        img_buffer.seek(0)
-        img_str = base64.b64encode(img_buffer.read()).decode()
-        
-        return img_str
+        try:
+            wordcloud = WordCloud(width=800, height=400, background_color='white').generate(' '.join(words))
+            
+            # Convert to base64
+            img_buffer = io.BytesIO()
+            wordcloud.to_image().save(img_buffer, format='PNG')
+            img_buffer.seek(0)
+            img_str = base64.b64encode(img_buffer.read()).decode()
+            
+            return img_str
+        except Exception as e:
+            # If wordcloud fails, return empty string
+            return ""
     
     def _generate_length_chart(self, texts: List[str], title: str) -> str:
         """Generate a length distribution chart and return as base64 string."""
