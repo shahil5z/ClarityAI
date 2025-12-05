@@ -1,6 +1,6 @@
 from typing import List
-from langchain.schema import Document
-from langchain.vectorstores import FAISS
+from langchain_core.documents import Document
+from langchain_community.vectorstores import FAISS
 from src.utils.config import Config
 from src.utils.logger import setup_logger
 
