@@ -1,9 +1,9 @@
 # src/generation/answer_generator.py
 
 from typing import List
-from langchain.schema import Document
+from langchain_core.documents import Document
 from langchain_openai import ChatOpenAI
-from langchain.chains.question_answering import load_qa_chain
+from langchain_core.prompts import ChatPromptTemplate
 from src.utils.config import Config
 from src.utils.logger import setup_logger
 
@@ -16,28 +16,47 @@ class AnswerGenerator:
         self.max_tokens = Config.MAX_TOKENS
         
         self.llm = ChatOpenAI(
-            model_name=self.model_name,
+            model=self.model_name,
             temperature=self.temperature,
             max_tokens=self.max_tokens,
-            openai_api_key=Config.OPENAI_API_KEY,
-            request_timeout=30  # Add timeout to prevent hanging
+            api_key=Config.OPENAI_API_KEY,
+            timeout=30
         )
         
-        self.qa_chain = load_qa_chain(self.llm, chain_type="stuff")
+        # Create prompt template
+        self.prompt = ChatPromptTemplate.from_template(
+            """Use the following pieces of context to answer the question at the end.
+            If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+            Context: {context}
+
+            Question: {input}
+            
+            Answer:"""
+        )
     
     def generate_answer(self, question: str, documents: List[Document]) -> str:
         """Generate an answer based on a question and relevant documents."""
         try:
             logger.info(f"Generating answer for question: {question}")
             
-            # Use the QA chain with proper parameters
-            result = self.qa_chain.run(
-                input_documents=documents,
-                question=question
-            )
+            # Combine document contents
+            context = "\n\n".join([doc.page_content for doc in documents])
+            
+            # Format prompt with context and question
+            formatted_prompt = self.prompt.format(context=context, input=question)
+            
+            # Generate answer using LLM
+            result = self.llm.invoke(formatted_prompt)
+            
+            # Extract content from response
+            if hasattr(result, 'content'):
+                answer = result.content
+            else:
+                answer = str(result)
             
             logger.info("Answer generated successfully")
-            return result
+            return answer
         except Exception as e:
             logger.error(f"Error generating answer: {str(e)}")
             raise
